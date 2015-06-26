@@ -1,0 +1,19 @@
+<html>
+
+<body>
+    <paper-autocomplete></paper-autocomplete>
+    <script>
+    var birds = [
+            "Budgie",
+            "Eagle",
+            "Flamingo",
+            "Parakeet",
+            "Parrot",
+            "Penguin",
+            "Pigeon",
+            "Puffin"
+        ],
+        el = document.querySelector('paper-autocomplete')
+        Polymer.dom(el).setAttribute('choices', birds)
+    </script>
+</body>

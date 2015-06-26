@@ -1,19 +1,40 @@
 <html>
 
 <body>
-    <paper-autocomplete></paper-autocomplete>
+    <dom-module is="bird-selector">
+        <style>
+        :host {
+            margin: 8px
+        }
+        </style>
+        <template>
+            <paper-autocomplete label="Birds" choices="[[birds]]"></paper-autocomplete>
+        </template>
+    </dom-module>
     <script>
-    var birds = [
-            "Budgie",
-            "Eagle",
-            "Flamingo",
-            "Parakeet",
-            "Parrot",
-            "Penguin",
-            "Pigeon",
-            "Puffin"
-        ],
-        el = document.querySelector('paper-autocomplete')
-        Polymer.dom(el).setAttribute('choices', birds)
+    Polymer({
+        is: "bird-selector",
+        ready: function() {
+            console.log(this.birds)
+        },
+        properties: {
+            birds: {
+                type: Array,
+                value: function() {
+                    return [
+                        "Budgie",
+                        "Eagle",
+                        "Flamingo",
+                        "Parakeet",
+                        "Parrot",
+                        "Penguin",
+                        "Pigeon",
+                        "Puffin"
+                    ]
+                }
+            }
+        }
+    })
     </script>
+    <bird-selector></bird-selector>
 </body>

@@ -12,7 +12,6 @@
     <template>
         <paper-input-container>
             <label>{{label}}</label>
-            <content select=".content"></content>
             <input id="searchBox" class="paper-input-input" is="iron-input" bind-value="{{searchValue::input}}"></input>
         </paper-input-container>
         <iron-collapse id="collapse">
@@ -60,7 +59,7 @@
         },
         _selectItem: function(event) {
             this.set('value', event.model.item)
-            collapse.toggle()
+            this.$.collapse.toggle()
         }
     })
 })()
